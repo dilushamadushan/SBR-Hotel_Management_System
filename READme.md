@@ -33,7 +33,7 @@ To run this project locally, follow these steps:
 01. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/secret-berry-resort.git
+https://github.com/dilushamadushan/SBR-Hotel_Management_System.git
 ```
 02.  Move the Project to Your Local Server Directory
 
