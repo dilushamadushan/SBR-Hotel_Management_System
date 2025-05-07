@@ -1,0 +1,34 @@
+.sec{
+    margin-top: 20px;
+    margin-left: 8%;
+    margin-right: 8%;
+    margin-bottom: 20px;
+}
+body {
+    overflow-x: hidden;
+}
+
+.section__container {
+    margin: auto;
+    margin-bottom: 1rem;
+    line-height: 3rem;
+    height: 400px;
+    text-align: center;
+}
+.header-container{
+    height: 400px;
+    background-image: url("../media/index/header.jpg");
+    background-position: center ; 
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.container-text{
+    color: rgb(255, 254, 254);
+    padding-top: 150px;
+}
+.container-text h1{
+    font-weight: bold;
+}
+.container-text span{
+    color: var(--text-light);
+}

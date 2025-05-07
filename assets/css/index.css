@@ -1,0 +1,325 @@
+.sec{
+    margin-top: 81vh;
+    position: relative;
+    margin-bottom: 20px;
+}
+body {
+    overflow-x: hidden;
+}
+
+.home_slider img{
+    width: 100%;
+}
+
+.home_slider {
+    z-index: 0000;
+    width: 100%;
+    min-height: 100vh;
+    position: absolute;
+    
+}
+
+.home_slider .slider_img{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out;
+    object-fit: cover;
+}
+
+.home_slider .slider_img.active{
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+}
+
+
+.home_slider::after{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(52,2,56,0.233);
+}
+.banner_content{
+    position: absolute;
+    top: 48%;
+    left: 8%;
+    width: 50%;
+    height: 100vh;
+    z-index: 9999;
+    display: none;
+    opacity: 1;
+    visibility: hidden;
+    animation: textAnim 4s linear forwards;
+}
+@keyframes textAnim{
+
+    100%{
+        opacity: 1;
+        visibility: visible;
+    }
+}
+.banner_content.active{
+    display: block;
+}
+.banner_content h2{
+    font-size: 35px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: #ffffff;
+}
+.banner_content p{
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: 500;
+    letter-spacing: 1.8px;
+}
+.banner_content .more_btn{
+    padding: 15px 25px;
+    background: var(--primary-color-dark);
+    color: #fff;
+    font-size: 16px;
+    border-radius: 50px;
+    position: relative;
+    top: 25px;
+    transition: .3s ease-out;
+    text-decoration: none;
+}
+.banner_content .more_btn:hover{
+    background: var(--text-dark);
+    color: #fff;
+}
+
+.menu_bg{
+    z-index: 9999;
+    position: absolute;
+    bottom: 100px;
+    left: 70%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+}
+
+@media (max-width:900px){
+        .menu_bg{
+            display: none;
+        }
+}
+
+.menu_bg .bg_btn{
+    width: 120px;
+    height: 70px;
+    border: 1.5px solid #fff;
+    cursor: pointer;
+    object-fit: cover;
+    transform: scale(0);
+    animation: imgBtn 0.2s linear forwards;
+    animation-delay: calc(0.2s * var(--i));
+}
+@keyframes imgBtn{
+    100%{
+        transform: scale(1);
+    }
+}
+.menu_bg .bg_btn:hover{
+    border: 2px solid var(--primary-color) !important;
+    transform: scale(1.2) !important;
+    transition: .3s ease !important;
+}
+
+.booking-form label{
+    color: var(--primary-color);
+}
+.booking-form{
+   background-color: white;
+}
+.formBook{
+    margin-top: 150px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.welcome{
+    background: linear-gradient(#f8f9fa,#ffffff);
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+.welcomeCon h1{
+    margin-bottom: 35px;
+}
+.welcomeCon p a{
+    margin-top: 20px;
+}
+.welcomeCon p{
+    line-height: 2em;
+}
+.img-absolute {
+    position: absolute;
+    bottom: -100px;
+    right: -100px; 
+}
+.img-absolute img {
+      max-width: 250px;
+      border-radius: 50%;
+      border: 10px solid #f2f4fb; 
+}
+@media (max-width: 991.98px) {
+    .img-absolute {
+        right: 0px; 
+    }
+    .img-absolute img {
+          max-width: 160px; 
+    } 
+}
+.services-section{
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+.service-item:hover {
+    background: var(--primary-color);
+}
+.service-item:hover i {
+    color: #ffffff;
+}
+.service-item:hover h4 {
+    color: #ffffff;
+}
+.service-item:hover p {
+    color: #ffffff;
+}
+.service-item i {
+    color: var(--primary-color);
+    transition: all 0.1s;
+}
+.service-item h4 {
+    color: #19191a;
+    font-size: 22px;
+    margin-bottom: 15px;
+    margin-top: 10px;
+    transition: all 0.1s;
+}
+.service-item p {
+    color: #707079;
+    transition: all 0.1s;
+}
+
+.section-Room{
+    min-height: 100vh;
+    margin-top: 100px;
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+.card-explore {
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 0px 10px 30px 0px rgba(153, 153, 153, 0.2);
+    transition: all .4s ease; 
+}
+.card-explore .card-img {
+    border-radius: 0;
+    height: 300px;
+}
+.card-explore__img {
+    width: 100%;
+    position: relative; 
+}
+.card-explore__img::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    clip-path: polygon(0 83%, 0% 100%, 100% 100%);
+    background: #fff;
+    width: 100%;
+    height: 190px; 
+}
+.card-explore__img img {
+    padding-bottom: 1px; 
+}
+.card-explore .card-body {
+          padding: 5px 18px 35px 40px; 
+        }
+.card-explore__price {
+          font-size: 30px; }
+.card-explore__price sub {
+            font-size: 18px; 
+        }
+.card-explore__title {
+  font-size: 24px;
+  margin: 12px 0 18px 0;
+ }
+.card-explore__title a {
+    color: #222222;
+    transition: color .2s ease; 
+    text-decoration: none;
+}
+.card-explore__link {
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #303030;
+  transition: color .2s ease; 
+  text-decoration: none;
+}
+.card-explore__link i, .card-explore__link span {
+    padding-left: 3px;
+    transition: all .35s ease; 
+}
+.card-explore:hover a {
+  color: var(--primary-color); 
+}
+.card-explore:hover .card-explore__link i, .card-explore:hover .card-explore__link span {
+    padding-left: 15px; 
+}
+.secAbout{
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+.secAbout .aboutCon{
+    margin-top: 20px;
+}
+.secAbout img{
+    width: 500px;
+}
+
+.aboutCon p{
+    line-height: 2em;
+}
+
+.countValue  h4 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.countValue:hover{
+    background-color: var(--primary-color);
+    color: #fff;
+}
+.secCount{
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+@keyframes appear {
+    from {
+        opacity: 0;
+        scale :0.5;
+    }
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
