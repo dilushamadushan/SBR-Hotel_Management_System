@@ -1,25 +1,44 @@
 <?php include('../includes/config.php'); ?>
-<?php
-    if($_SERVER["REQUEST_METHOD"] == "POST"){
-        $title = $_POST['blogTitle'];
-        $content = $_POST['blogContent'];
-        $publish_date = date("Y-m-d");
+<?php 
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['action']) && $_POST['action'] === 'like_blog') {
+    $blog_id = intval($_POST['blog_id']);
+    $sql = "UPDATE blogs SET like_Count = like_Count + 1 WHERE blog_id = $blog_id";
 
-        $image_name = $_FILES['blogImage']['name'];
-        $tmp  = explode(".",$image_name);
-        $newfilename = round(microtime(true)).'.'.end($tmp);
-        $uploadPath = '../upload/'.$newfilename;
-        move_uploaded_file($_FILES['blogImage']['tmp_name'],$uploadPath); 
-
-        $sqlBlog = "INSERT INTO blogs(title,content,image,publish_date) VALUE ('$title','$content','$uploadPath','$publish_date')"; 
-        $data = mysqli_query($conn,$sqlBlog);
-        if($data){
-           // echo "Success";
-        }else{
-            echo "haaa";
-        }
+    if (mysqli_query($conn, $sql)) {
+        $result = mysqli_query($conn, "SELECT like_Count FROM blogs WHERE blog_id = $blog_id");
+        $row = mysqli_fetch_assoc($result);
+        echo $row['like_Count'];
+    } else {
+        http_response_code(500);
+        echo "Error updating likes.";
     }
+    exit;
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && !isset($_POST['action'])) {
+    $title = $_POST['blogTitle'];
+    $content = $_POST['blogContent'];
+    $publish_date = date("Y-m-d");
+
+    $image_name = $_FILES['blogImage']['name'];
+    $tmp = explode(".", $image_name);
+    $newfilename = round(microtime(true)) . '.' . end($tmp);
+    $uploadPath = '../upload/' . $newfilename;
+    move_uploaded_file($_FILES['blogImage']['tmp_name'], $uploadPath);
+
+    $stmt = $conn->prepare("INSERT INTO blogs (title, content, image, publish_date) VALUES (?, ?, ?, ?)");
+    $stmt->bind_param("ssss", $title, $content, $uploadPath, $publish_date);
+    $data = $stmt->execute();
+
+    if ($data) {
+        echo "<script>alert('Blog submitted successfully!');</script>";
+        echo "<script>window.location.href='blog.php';</script>";
+    } else {
+        echo "<script>alert('Blog submission failed: " . $stmt->error . "');</script>";
+    }
+}
 ?>
+
 <?php include('../includes/header.php'); ?>
 
 <link rel="stylesheet" href="../assets/css/blog.css">
@@ -52,7 +71,10 @@
                 <p class="card-text"><?php echo substr($row['content'], 0, 100) . '...'; ?></p>
                 <p class="text-muted">Published on: <?php echo $row['publish_date']; ?></p>
                 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#<?php echo $modalId; ?>">Read More</button>
-                <button class="btn btn-outline-danger like-btn" data-id="<?php echo $row['blog_id']; ?>">❤️ <span class="like-count">0</span></button>
+                <button class="btn btn-outline-danger like-btn" data-id="<?php echo $row['blog_id']; ?>">
+                    ❤️ <span class="like-count"><?php echo $row['like_Count']; ?></span>
+                </button>
+
             </div>
         </div>
     </div>

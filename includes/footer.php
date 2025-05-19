@@ -6,7 +6,9 @@
                 <h4 class="fw-semibold logoText"><span>Secret</span> Berry</h4>
                 <p>Discover a world of comfort, luxury, and adventure as
                      you explore our curated selection of hotels.</p>
-                <button class="btn btn-primary mt-4">Book Now</button>
+               <a href="../pages/room-catalogue.php" class="btn btn-primary mt-4">Book Now</a>
+
+
             </div>
             <div class="col-md-3 fooCon">
                 <h5>Quick Links</h5>
@@ -44,5 +46,6 @@
         </div>
     </div>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -7,7 +7,7 @@
             <div class="container-text">
                 <h1>CONTACT US</h1>
                 <div class="page-path">
-                    <p><span>Home </span> Contact Us</p>
+                    <p><span>Home > </span> Contact Us</p>
                 </div>
             </div>
         </div>
@@ -69,7 +69,7 @@ $conn->close();
                     <h3 class="title">Secret Berry Resort</h3>
                     <div class="info">
                         <div class="information"><img src="../assets/media/contact/location.png" class="icon"><p>No 195, Near Victoria Park, Nuwara Eliya, Sri Lanka.</p></div>
-                        <div class="information"><img src="../asssets/media/contact/gmail.png" class="icon"><p>secretberry@gmail.com</p></div>
+                        <div class="information"><img src="../assets/media/contact/gmail.png" class="icon"><p>secretberry@gmail.com</p></div>
                         <div class="information"><img src="../assets/media/contact/phone-call.png" class="icon"><p>+94 702384982</p></div>
                     </div>
                     <div class="social-media">
