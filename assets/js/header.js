@@ -1,11 +1,21 @@
+window.onscroll = function () {
+    const navbar = document.querySelector('.navbar');
+    const menuIcon = document.querySelector('.menuIcon');
+    const mobileMenu = document.querySelector('.mobile-menu');
+
+    const scrolled = window.scrollY > 50;
+
+    navbar.classList.toggle('scrolled', scrolled);
+    menuIcon.classList.toggle('mItem', scrolled);
+    mobileMenu.classList.toggle('mobileMenu',scrolled);
+};
+
+
 function toggleMenu() {
-    const menuList = document.getElementById("menuList");
-    if (menuList) {
-        menuList.classList.toggle("active");
+    const menu = document.getElementById('mobileMenu');
+    if (menu.style.display === 'block') {
+        menu.style.display = 'none';
     } else {
-        console.error("Error: #menuList not found in HTML.");
+        menu.style.display = 'block';
     }
 }
-window.onscroll = function() {
-    document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 50);
-};

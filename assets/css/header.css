@@ -15,7 +15,6 @@
     padding:0;
     box-sizing: border-box;
 }
-
 .logo span {
     color: rgb(0, 0, 0);
     transition: color 0.3s ease-in-out;
@@ -70,6 +69,47 @@
     color: var(--white) !important;
 }
 
-.menuIcon{
+.menuIcon i {
+    color: black; 
+    transition: color 0.3s ease;
+}
+
+.menuIcon.mItem i {
+    color: white; 
+}
+.mobile-menu.mobileMenu .nav-link {
+    color: black !important;
+}
+
+.mobile-menu {
     display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.7); 
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
+}
+
+
+@media (min-width: 992px) {
+    .menuIcon {
+        display: none !important;
+    }
+    #menuList ,
+    .loginBtn {
+        display: flex !important;
+    }
+}
+
+@media (max-width: 991px) {
+    #menuList,
+    .loginBtn {
+        display: none !important;
+    }
 }
