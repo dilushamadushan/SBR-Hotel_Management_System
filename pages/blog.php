@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !isset($_POST['action'])) {
                     $modalId = "blogModal" . $row['blog_id'];
             ?>        
     <div class="col-lg-4 col-md-6 mb-4">
-        <div class="card">
+        <div class="card" id = "<?php echo $row['blog_id']; ?>">
             <img src="<?php echo $row['image']; ?>" class="card-img-top" alt="img">
             <div class="card-body">
                 <h5 class="card-title"><?php echo $row['title']; ?></h5>

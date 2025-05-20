@@ -315,3 +315,7 @@ body {
         scale: 1;
     }
 }
+
+.modal-body {
+  padding: 40px;
+}

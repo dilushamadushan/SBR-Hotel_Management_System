@@ -1,6 +1,48 @@
+<?php include('includes/config.php'); ?>
 
 <link rel="stylesheet" href="assets/css/index.css">
+
 <?php include "includes/header.php" ?>
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    // Ensure $conn is defined and connected
+
+    $checkInDate = $_POST["check-date"];
+    $checkOutDate = $_POST["check-out-date"];
+    $roomType = $_POST["room-type"];
+
+    $roomAvailable = true;
+
+    $query = mysqli_query($conn, "SELECT * FROM booking_details");
+
+    while ($res = mysqli_fetch_assoc($query)) {
+        if (
+            $checkInDate < $res['check_out_date'] &&
+            $checkOutDate > $res['check_in_date'] &&
+            $res['room_type'] == $roomType
+        ) {
+            // Conflict found
+            $roomAvailable = false;
+            break;
+        }
+    }
+
+    if ($roomAvailable) {
+        echo "<script>
+            alert('Room is available!');
+        </script>";
+    } else {
+        echo "<script>
+            if (confirm('Room not available! Do you want to try different dates or room type?')) {
+                window.location.href = window.location.href;
+            }
+        </script>";
+    }
+}
+?>
+
+
 <section class="home_slider">
         <img src="assets/media/index/img1.jpg" alt="Slide 1" class="slider_img active">
         <img src="assets/media/index/img2.jpg" alt="Slide 2" class="slider_img">
@@ -51,7 +93,7 @@
     <section class="formBook bg-light" >
             <div class="container mt-5">
                 <div class="booking-form  p-3 rounded">
-                    <form action="/submit-booking" method="post">
+                    <form action="" method="post">
                         <div class="row g-3">
                             <div class="col-md-4">
                                 <label for="check-date" class="form-label">CHECK-IN DATE</label>
@@ -64,9 +106,9 @@
                             <div class="col-md-4">
                                 <label for="room-type" class="form-label">ROOM TYPE</label>
                                 <select name="room-type" id="room-type" class="form-select" required>
-                                    <option value="single">Single</option>
-                                    <option value="double">Double</option>
-                                    <option value="suite">Suite</option>
+                                    <option value="Luxury Suite Room">Luxury Suite Room</option>
+                                    <option value="Deluxe Room">Deluxe Room</option>
+                                    <option value="Standard Room">Standard Room</option>
                                 </select>
                             </div>
                             <div class="col-md-4">
@@ -142,7 +184,7 @@
 
             <h6 class="fw-bold">🌟 Guest Promise</h6>
             <p class="mb-4">We’re committed to making your stay unforgettable — whether you're here for a honeymoon, family vacation, or just a break from city life.</p>
-            
+
           </div>
           <div class="modal-footer justify-content-center border-0 pt-0">
             <a href="pages/room-catalogue.php" class="btn btn-primary px-4">Explore Our Rooms</a>
@@ -304,6 +346,28 @@
                   </div>
                 </div>
     </section>
+
+<!-- Bootstrap Ad Popup Modal -->
+<div class="modal fade" id="adModal" tabindex="-1" aria-labelledby="adModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" style="max-width: 700px;">
+    <div class="modal-content position-relative" style="height: 500px; overflow: hidden;">
+      
+      <!-- Close Button at Top-Left -->
+      <button type="button" class="btn-close position-absolute top-0 start-0 m-2 z-3" data-bs-dismiss="modal" aria-label="Close"></button>
+      
+      <!-- Ad Content -->
+      <div class="modal-body p-0" id="adContent" style="transition: opacity 1s;">
+        <!-- Dynamic ad content will be inserted here -->
+      </div>
+      
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="adModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content" id="adContent" style="transition: opacity 0.5s;"></div>
+  </div>
+</div>
 
 </div>    
 
