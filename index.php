@@ -53,31 +53,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="banner_content active">
             <h2>Welcome to Our Hotel</h2>
             <p>Experience luxury like never before.</p>
-            <a href="pages/room-catalogue.php" class="more_btn">Explore</a>
+            <a href="pages/room-catalogue.php" class="more_btn">Book Room</a>
         </div>
 
         <div class="banner_content">
             <h2>Breathtaking Views</h2>
             <p>Experience the best view.</p>
-            <a href="pages/room-catalogue.php" class="more_btn">Explore</a>
+            <a href="pages/room-catalogue.php" class="more_btn">Book Room</a>
         </div>
 
         <div class="banner_content">
             <h2>Luxury Redefined</h2>
             <p>A place where elegance meets comfort.</p>
-            <a href="pages/room-catalogue.php" class="more_btn">Explore</a>
+            <a href="pages/room-catalogue.php" class="more_btn">Book Room</a>
         </div>
 
         <div class="banner_content">
             <h2>Comfortable & Affordable</h2>
             <p>Your perfect getaway awaits.</p>
-            <a href="pages/room-catalogue.php" class="more_btn">Explore</a>
+            <a href="pages/room-catalogue.php" class="more_btn">Book Room</a>
         </div>
 
         <div class="banner_content">
             <h2>Delicious Dining</h2>
             <p>Enjoy world-class cuisines.</p>
-            <a href="pages/room-catalogue.php" class="more_btn">Explore</a>
+            <a href="pages/room-catalogue.php" class="more_btn">Book Room</a>
         </div>
 
         <div class="menu_bg">
@@ -106,7 +106,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <div class="col-md-4">
                                 <label for="room-type" class="form-label">ROOM TYPE</label>
                                 <select name="room-type" id="room-type" class="form-select" required>
-                                    <option value="Luxury Suite Room">Luxury Suite Room</option>
+                                    <option value="Luxury Suite">Luxury Suite</option>
                                     <option value="Deluxe Room">Deluxe Room</option>
                                     <option value="Standard Room">Standard Room</option>
                                 </select>
@@ -206,46 +206,58 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 <div class="row g-4">
                     <div class="col-lg-4 col-sm-6">
+                      <a href="pages/service.php" class="text-decoration-none text-dark">
                         <div class="service-item p-4 text-center">
                             <i class="fa-solid fa-square-parking fa-4x"></i>
                             <h4 class="mt-3">Travel Plan</h4>
                             <p>Plan your perfect trip with ease and enjoy seamless travel experiences.</p>
                         </div>
+                        </a>
                     </div>
                     <div class="col-lg-4 col-sm-6">
+                      <a href="pages/service.php#travel" class="text-decoration-none text-dark">
                         <div class="service-item p-4 text-center">
                             <i class="fa-solid fa-utensils fa-4x"></i>
                             <h4 class="mt-3">Catering Service</h4>
                             <p>Delicious meals tailored to your taste, served with perfection.</p>
                         </div>
+                        </a>
                     </div>
                     <div class="col-lg-4 col-sm-6">
+                      <a href="pages/service.php#Catering" class="text-decoration-none text-dark">
                         <div class="service-item p-4 text-center">
                             <i class="fa-solid fa-bed-pulse fa-4x"></i>
                             <h4 class="mt-3">Babysitting</h4>
                             <p>Trustworthy and caring babysitting services for your little ones.</p>
                         </div>
+                        </a>
                     </div>
                     <div class="col-lg-4 col-sm-6">
+                      <a href="pages/service.php#Babysitting" class="text-decoration-none text-dark">
                         <div class="service-item p-4 text-center">
                             <i class="fa-solid fa-clock fa-4x"></i>
                             <h4 class="mt-3">Hire Driver</h4>
                             <p>Reliable and professional drivers for your safe and comfortable ride.</p>
                         </div>
+                        </a>
                     </div>
                     <div class="col-lg-4 col-sm-6">
+                      <a href="pages/service.php#Hire" class="text-decoration-none text-dark">
                         <div class="service-item p-4 text-center">
                             <i class="fa-solid fa-martini-glass-citrus fa-4x"></i>
                             <h4 class="mt-3">Bar & Drink</h4>
                             <p>Enjoy premium drinks and cocktails in a vibrant atmosphere.</p>
                         </div>
+                        </a>
                     </div>
                     <div class="col-lg-4 col-sm-6">
+                      <a href="pages/service.php#Bar" class="text-decoration-none text-dark">
                         <div class="service-item p-4 text-center">
                             <i class="fa-solid fa-spa fa-4x"></i>
                             <h4 class="mt-3">Spa & Wellness</h4>
                             <p>Relax and rejuvenate with our premium spa and wellness treatments.</p>
                         </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -271,7 +283,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <h3 class="card-explore__price">$250.00 <sub>/ Per Night</sub></h3>
                         <h4 class="card-explore__title"><a href="#">Luxury Suite</a></h4>
                         <p>Experience the pinnacle of luxury with our spacious and elegantly designed suites.</p>
-                        <a class="card-explore__link" href="pages/room-catalogue.php#luxurySuiteModal">Book Now <i class="fa-solid fa-arrow-right"></i></a>
+                        <a class="card-explore__link" href="pages/room-catalogue.php">Book Now <i class="fa-solid fa-arrow-right"></i></a>
                       </div>
                       </div>
                     </div>
@@ -285,7 +297,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <h3 class="card-explore__price">$180.00 <sub>/ Per Night</sub></h3>
                         <h4 class="card-explore__title"><a href="#">Deluxe Room</a></h4>
                         <p>Relax in style with our deluxe rooms, offering comfort and modern amenities.</p>
-                        <a class="card-explore__link" href="#">Book Now <i class="fa-solid fa-arrow-right"></i></a>
+                        <a class="card-explore__link" href="pages/room-catalogue.php">Book Now <i class="fa-solid fa-arrow-right"></i></a>
                       </div>
                       </div>
                     </div>
@@ -299,7 +311,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <h3 class="card-explore__price">$120.00 <sub>/ Per Night</sub></h3>
                         <h4 class="card-explore__title"><a href="#">Standard Room</a></h4>
                         <p>Enjoy a cozy and affordable stay in our well-equipped standard rooms.</p>
-                        <a class="card-explore__link" href="#">Book Now <i class="fa-solid fa-arrow-right"></i></a>
+                        <a class="card-explore__link" href="pages/room-catalogue.php">Book Now <i class="fa-solid fa-arrow-right"></i></a>
                       </div>
                       </div>
                     </div>

@@ -29,7 +29,7 @@
                             <a class="nav-link fw-semibold text-dark" href="../pages/about-us.php">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-semibold text-dark" href="#">Services</a>
+                            <a class="nav-link fw-semibold text-dark" href="../pages/service.php">Services</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link fw-semibold text-dark" href="#">Event</a>
