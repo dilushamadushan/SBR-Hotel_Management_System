@@ -1,4 +1,14 @@
+<?php
+session_start();
+$booking_success = false;
+if (isset($_SESSION['booking_success']) && $_SESSION['booking_success'] === true) {
+    $booking_success = true;
+    unset($_SESSION['booking_success']);
+}
+?>
+
 <?php include('../includes/config.php'); ?>
+
 
 <?php include('../includes/header.php'); ?>
 <link rel="stylesheet" href="../assets/css/room_catalogue.css">
@@ -86,7 +96,8 @@
                             <div class="modal-content-booking">
                                 <span class="close-btn" onclick="closeBookingPopup()">&times;</span>
                                 <h2>Booking: <span id="roomNameDisplay"></span></h2>
-                                <form id="bookingForm">
+                                <form id="bookingForm" method="POST" action="book_room_conn.php">
+                                    <input type="hidden" name="room_type" value="Luxury Suite Room">
                                     <label for="name">Full Name</label>
                                     <input type="text" id="name" name="name" placeholder="Enter your name" required>
                                     <label for="email">Email Address</label>
@@ -100,39 +111,47 @@
                                     <div class="row g-2 mt-3">
                                       <div class="col-md-6">
                                         <label for="adultCount" class="form-label">Adults</label>
-                                        <input type="number" class="form-control" id="adultCount" min="0" value="0" required>
+                                        <input type="number" class="form-control" name="adults" id="adultCount" min="0" value="0" required>
                                       </div>
                                       <div class="col-md-6">
                                         <label for="childrenCount" class="form-label">Children</label>
-                                        <input type="number" class="form-control" id="childrenCount" min="0" value="0" required>
+                                        <input type="number" class="form-control" name="children" id="childrenCount" min="0" value="0" required>
                                       </div>
                                     </div>
                                     <hr class="my-3">
                                     <h6 class="text-primary">💳 Payment Details</h6>                            
                                     <div class="mb-3">
                                       <label for="cardNumber" class="form-label">Card Number</label>
-                                      <input type="text" class="form-control" id="cardNumber" placeholder="XXXX XXXX XXXX XXXX" required>
+                                      <input type="text" class="form-control" id="cardNumber" name="card_number" placeholder="XXXX XXXX XXXX XXXX" required>
                                     </div>
                                     
                                     <div class="row">
                                       <div class="col-md-6 mb-3">
                                         <label for="expiryDate" class="form-label">Expiry Date</label>
-                                        <input type="text" class="form-control" id="expiryDate" placeholder="MM/YY" required>
+                                        <input type="text" class="form-control" id="expiryDate" name="expiry_date" placeholder="MM/YY" required>
                                       </div>
                                       <div class="col-md-6 mb-3">
                                         <label for="cvv" class="form-label">CVV</label>
-                                        <input type="password" class="form-control" id="cvv" placeholder="123" required>
+                                        <input type="password" class="form-control" id="cvv" name="cvv" placeholder="123" required>
                                       </div>
                                     </div>
                                     
                                     <div class="mb-3">
                                       <label for="cardHolder" class="form-label">Card Holder Name</label>
-                                      <input type="text" class="form-control" id="cardHolder" required>
+                                      <input type="text" class="form-control" id="cardHolder" name="card_holder" required>
                                     </div>
                                     <label for="requests">Special Requests</label>
-                                    <textarea id="requests" name="requests" placeholder="Any special instructions..."></textarea><br>
-                                    <button type="submit" onclick="handleBookingSubmit()" class="btn btn-success">Submit Booking</button>
+                                    <textarea id="requests" name="requests" name="requests" placeholder="Any special instructions..."></textarea><br>
+                                     <button type="submit" class="btn btn-success">Submit Booking</button>
                                 </form>
+
+                                <?php if ($booking_success): ?>
+                                      <script>
+                                          alert("✅ Booking Successful! Your room is reserved.");
+                                      </script>
+                                <?php endif; ?>
+
+                                   
                                 <div id="bookingConfirmation" class="alert alert-success mt-3" style="display: none;">
                                   ✅ Thank you! Your booking has been submitted.
                                 </div>
@@ -204,40 +223,6 @@
                             </div>
                           </div>
                         </div>
-                        
-
-                        <div id="bookingModal" class="booking-modal">
-                            <div class="modal-content">
-                                <span class="close-btn" onclick="closeBookingPopup()">&times;</span>
-                                <h2>Booking Details</h2>
-                                <form id="bookingForm">
-                                  <label for="name">Full Name</label>
-                                  <input type="text" id="name" name="name" placeholder="Enter your name" required>
-                                  <label for="email">Email Address</label>
-                                  <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                                  <label for="phone">Phone Number</label>
-                                  <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
-                                  <label for="checkin">Check-in Date</label>
-                                  <input type="date" id="checkin" name="checkin" required>
-                                  <label for="checkout">Check-out Date</label>
-                                  <input type="date" id="checkout" name="checkout" required>
-                                  <div class="row g-2 mt-3">
-                                    <div class="col-md-6">
-                                      <label for="adultCount" class="form-label">Adults</label>
-                                      <input type="number" class="form-control" id="adultCount" min="0" value="0" required>
-                                    </div>
-                                    <div class="col-md-6">
-                                      <label for="childrenCount" class="form-label">Children</label>
-                                      <input type="number" class="form-control" id="childrenCount" min="0" value="0" required>
-                                    </div>
-                                  </div>
-                                  <label for="requests">Special Requests</label>
-                                  <textarea id="requests" name="requests" placeholder="Any special instructions..."></textarea><br>
-                                  <button type="submit">Submit Booking</button>
-
-                                </form>
-                            </div>
-                        </div>
                     </div>
 
                     <!-- Standard Room -->
@@ -303,38 +288,6 @@
                               </div>
                           </div>
                       </div>
-
-                        <div id="bookingModal" class="booking-modal">
-                            <div class="modal-content">
-                                <span class="close-btn" onclick="closeBookingPopup()">&times;</span>
-                                <h2>Booking Details</h2>
-                                <form id="bookingForm">
-                                    <label for="name">Full Name</label>
-                                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
-                                    <label for="email">Email Address</label>
-                                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                                    <label for="phone">Phone Number</label>
-                                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
-                                    <label for="checkin">Check-in Date</label>
-                                    <input type="date" id="checkin" name="checkin" required>
-                                    <label for="checkout">Check-out Date</label>
-                                    <input type="date" id="checkout" name="checkout" required>
-                                    <div class="row g-2 mt-3">
-                                      <div class="col-md-6">
-                                        <label for="adultCount" class="form-label">Adults</label>
-                                        <input type="number" class="form-control" id="adultCount" min="0" value="0" required>
-                                      </div>
-                                      <div class="col-md-6">
-                                        <label for="childrenCount" class="form-label">Children</label>
-                                        <input type="number" class="form-control" id="childrenCount" min="0" value="0" required>
-                                      </div>
-                                    </div>
-                                    <label for="requests">Special Requests</label>
-                                    <textarea id="requests" name="requests" placeholder="Any special instructions..."></textarea><br>
-                                    <button type="submit">Submit Booking</button>
-                                </form>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -1222,7 +1175,8 @@
                       ✔️ Jacuzzi & Fireplace Access
                     </div>
                 
-                    <form id="bookingForm">
+                    <form id="bookingForm" method="POST" action="book_room_conn.php">
+                      <input type="hidden" name="room_type" value="Luxury Suite Room">
                       <label for="name">Full Name</label>
                       <input type="text" id="name" name="name" required placeholder="Enter your name">
                       
