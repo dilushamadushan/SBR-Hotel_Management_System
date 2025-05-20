@@ -13,12 +13,12 @@ function openOfferPopup() {
     document.getElementById("formPopup").classList.add("active");
   }
   
-  document.getElementById("bookingForm").addEventListener("submit", function (e) {
-    e.preventDefault();
-    alert("🎉 Booking submitted successfully!");
-    document.getElementById("bookingForm").reset();
-    document.getElementById("formPopup").classList.remove("active");
-  });
+//   document.getElementById("bookingForm").addEventListener("submit", function (e) {
+//     e.preventDefault();
+//     alert("🎉 Booking submitted successfully!");
+//     document.getElementById("bookingForm").reset();
+//     document.getElementById("formPopup").classList.remove("active");
+//   });
 
   function closePopup() {
     document.getElementById('formPopup').style.display = "none"; 
@@ -35,6 +35,13 @@ $(document).ready(function(){
         });
     });
 });
+
+function openBookingPopup(roomType) {
+    document.getElementById("bookingModal").style.display = "block";
+    document.getElementById("roomNameDisplay").innerText = roomType;
+    document.querySelector("input[name='room_type']").value = roomType;
+}
+
     
 
     
