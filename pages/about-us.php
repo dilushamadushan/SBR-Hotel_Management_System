@@ -4,9 +4,9 @@
 <div class="header-container">
         <div class="section__container" id="home">
             <div class="container-text">
-                <h1>ABOUT</h1>
+                <h1>ABOUT US</h1>
                 <div class="page-path">
-                    <p><span>Home ></span> ABOUT</p>
+                    <p><span>Home ></span> About</p>
                 </div>
             </div>
         </div>

@@ -15,7 +15,7 @@
                 <ul class="list-unstyled">
                     <li><a href="../index.php" class="text-secondary text-decoration-none">Home</a></li>
                     <li><a href="../pages/service.php" class="text-secondary text-decoration-none">Services</a></li>
-                    <li><a href="../pages/#" class="text-secondary text-decoration-none">Event</a></li>
+                    <li><a href="../pages/event.php" class="text-secondary text-decoration-none">Event</a></li>
                     <li><a href="../pages/blog.php" class="text-secondary text-decoration-none">Blogs</a></li>
                     <li><a href="../pages/about-us.php" class="text-secondary text-decoration-none">About</a></li>
                     <li><a href="../pages/contact.php" class="text-secondary text-decoration-none">Contact</a></li>

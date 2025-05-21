@@ -23,8 +23,7 @@
                     <p></p>
                     <div class="buttons">
                         <button>View My Work</button>
-                        <button>contac Me</button>
-
+                        <button onclick="window.location.href='contact.php'">Contact Me</button>
                     </div>
                 </div>
 

@@ -31,6 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($roomAvailable) {
         echo "<script>
             alert('Room is available!');
+            window.location.href='index.php';
         </script>";
     } else {
         echo "<script>
@@ -361,11 +362,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!-- Bootstrap Ad Popup Modal -->
 <div class="modal fade" id="adModal" tabindex="-1" aria-labelledby="adModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" style="max-width: 700px;">
+  <div class="modal-dialog modal-dialog-centered" style="max-width: 900px;">
     <div class="modal-content position-relative" style="height: 500px; overflow: hidden;">
       
       <!-- Close Button at Top-Left -->
-      <button type="button" class="btn-close position-absolute top-0 start-0 m-2 z-3" data-bs-dismiss="modal" aria-label="Close"></button>
+      <button type="button" class="btn-close position-absolute top-0 start-0 m-2 z-3" data-bs-dismiss="modal" aria-label="Close" style="background-color: #fff;"></button>
       
       <!-- Ad Content -->
       <div class="modal-body p-0" id="adContent" style="transition: opacity 1s;">

@@ -32,7 +32,7 @@
                             <a class="nav-link fw-semibold text-dark" href="../pages/service.php">Services</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-semibold text-dark" href="#">Event</a>
+                            <a class="nav-link fw-semibold text-dark" href="../pages/event.php">Event</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link fw-semibold text-dark" href="../pages/blog.php">Blogs</a>
