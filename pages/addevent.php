@@ -134,13 +134,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_event'])) {
                     $mail = new PHPMailer(true);
                     
                     // Server settings
-                    $mail->isSMTP();
-                    $mail->Host       = 'smtp.gmail.com';
-                    $mail->SMTPAuth   = true;
-                    $mail->Username   = 'sivmalishan@gmail.com';
-                    $mail->Password   = 'ovdefveiczfsawtc';
-                    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-                    $mail->Port       = 587;
+                    // $mail->isSMTP();
+                    // $mail->Host       = '';
+                    // $mail->SMTPAuth   = ;
+                    // $mail->Username   = '';
+                    // $mail->Password   = '';
+                    // $mail->SMTPSecure = ;
+                    // $mail->Port       =;
                     
                     // Format date for better readability
                     $formatted_date = date('l, F j, Y', strtotime($event_data['event_date']));
