@@ -6,14 +6,16 @@
                 <h4 class="fw-semibold logoText"><span>Secret</span> Berry</h4>
                 <p>Discover a world of comfort, luxury, and adventure as
                      you explore our curated selection of hotels.</p>
-                <button class="btn btn-primary mt-4">Book Now</button>
+               <a href="../pages/room-catalogue.php" class="btn btn-primary mt-4">Book Now</a>
+
+
             </div>
             <div class="col-md-3 fooCon">
                 <h5>Quick Links</h5>
                 <ul class="list-unstyled">
                     <li><a href="../index.php" class="text-secondary text-decoration-none">Home</a></li>
-                    <li><a href="../pages/#" class="text-secondary text-decoration-none">Services</a></li>
-                    <li><a href="../pages/#" class="text-secondary text-decoration-none">Event</a></li>
+                    <li><a href="../pages/service.php" class="text-secondary text-decoration-none">Services</a></li>
+                    <li><a href="../pages/event.php" class="text-secondary text-decoration-none">Event</a></li>
                     <li><a href="../pages/blog.php" class="text-secondary text-decoration-none">Blogs</a></li>
                     <li><a href="../pages/about-us.php" class="text-secondary text-decoration-none">About</a></li>
                     <li><a href="../pages/contact.php" class="text-secondary text-decoration-none">Contact</a></li>
@@ -22,10 +24,12 @@
             <div class="col-md-3 fooCon">
                 <h5>Our Services</h5>
                 <ul class="list-unstyled">
-                    <li><a href="#" class="text-secondary text-decoration-none">Service 1</a></li>
-                    <li><a href="#" class="text-secondary text-decoration-none">Service 2</a></li>
-                    <li><a href="#" class="text-secondary text-decoration-none">Service 3</a></li>
-                    <li><a href="#" class="text-secondary text-decoration-none">Service 4</a></li>
+                    <li><a href="../pages/service.php" class="text-secondary text-decoration-none">Travel Plan</a></li>
+                    <li><a href="../pages/service.php#travel" class="text-secondary text-decoration-none">Catering Service</a></li>
+                    <li><a href="../pages/service.php#Catering" class="text-secondary text-decoration-none">Babysitting</a></li>
+                    <li><a href="../pages/service.php#Hire" class="text-secondary text-decoration-none">Bar & Drink</a></li>
+                    <li><a href="../pages/service.php#Bar" class="text-secondary text-decoration-none">Spa & Wellness</a></li>
+                    <li><a href="../pages/service.php#Babysitting" class="text-secondary text-decoration-none">Hire Driver</a></li>
                 </ul>
             </div>
             <div class="col-md-3">
@@ -44,5 +48,6 @@
         </div>
     </div>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

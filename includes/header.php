@@ -29,10 +29,10 @@
                             <a class="nav-link fw-semibold text-dark" href="../pages/about-us.php">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-semibold text-dark" href="#">Services</a>
+                            <a class="nav-link fw-semibold text-dark" href="../pages/service.php">Services</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-semibold text-dark" href="#">Event</a>
+                            <a class="nav-link fw-semibold text-dark" href="../pages/event.php">Event</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link fw-semibold text-dark" href="../pages/blog.php">Blogs</a>
@@ -42,9 +42,22 @@
                         </li>
                     </ul>
                 </div>
-                <a href="../pages/login.php" class="btn btn-primary fw-semibold">Log In</a>
-                <div class="menuIcon">
-                    <i class="fa-solid fa-bars fs-3" onclick="toggleMenu()"></i>
+                <a href="../pages/login.php" class="btn btn-primary fw-semibold loginBtn">Log In</a>
+                <div class="menuIcon d-lg-none">
+                        <i class="fa-solid fa-bars fs-3" onclick="toggleMenu()"></i>
+                </div>
+            </div>
+            <div class = "hideMenu">
+                <div id="mobileMenu" class="d-lg-none mobile-menu">
+                    <ul class="navbar-nav flex-column text-center">
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="../index.php">Home</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="../pages/about-us.php">About</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="#">Services</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="#">Event</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="../pages/blog.php">Blogs</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="../pages/contact.php">Contact</a></li>
+                    </ul>
+                    <a href="../pages/login.php" class="btn btn-primary w-100 mt-2">Log In</a>
                 </div>
             </div>
         </nav>

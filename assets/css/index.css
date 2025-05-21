@@ -1,24 +1,18 @@
 .sec{
-    margin-top: 81vh;
-    position: relative;
     margin-bottom: 20px;
+    margin-left: 8%;
+    margin-right: 8%;
 }
 body {
     overflow-x: hidden;
-}
-
-.home_slider img{
-    width: 100%;
 }
 
 .home_slider {
     z-index: 0000;
     width: 100%;
     min-height: 100vh;
-    position: absolute;
-    
+    position:relative;
 }
-
 .home_slider .slider_img{
     position: absolute;
     width: 100%;
@@ -37,7 +31,6 @@ body {
     z-index: 1;
 }
 
-
 .home_slider::after{
     position: absolute;
     content: '';
@@ -52,7 +45,6 @@ body {
     top: 48%;
     left: 8%;
     width: 50%;
-    height: 100vh;
     z-index: 9999;
     display: none;
     opacity: 1;
@@ -112,7 +104,6 @@ body {
             display: none;
         }
 }
-
 .menu_bg .bg_btn{
     width: 120px;
     height: 70px;
@@ -141,13 +132,14 @@ body {
    background-color: white;
 }
 .formBook{
-    margin-top: 150px;
     padding-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 50px;
 }
-
+.book-btn{
+    height: 70px;
+    padding-top: 20px;
+}
 .welcome{
-    background: linear-gradient(#f8f9fa,#ffffff);
     animation: appear linear;
     animation-timeline: view();
     animation-range: entry 0% cover 40%;
@@ -214,7 +206,7 @@ body {
 
 .section-Room{
     min-height: 100vh;
-    margin-top: 100px;
+    margin-top: 20px;
     animation: appear linear;
     animation-timeline: view();
     animation-range: entry 0% cover 40%;
@@ -322,4 +314,8 @@ body {
         opacity: 1;
         scale: 1;
     }
+}
+
+.modal-body {
+  padding: 40px;
 }

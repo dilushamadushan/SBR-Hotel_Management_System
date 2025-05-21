@@ -33,7 +33,6 @@
  /* About Us Page Styles */
  .about-hero {
     padding-top: 0; /* Reduced top padding */
-    padding-bottom: 2rem;
     margin-top: 20px; /* Add negative margin to pull it up */
 }
 

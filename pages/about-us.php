@@ -4,9 +4,9 @@
 <div class="header-container">
         <div class="section__container" id="home">
             <div class="container-text">
-                <h1>ABOUT</h1>
+                <h1>ABOUT US</h1>
                 <div class="page-path">
-                    <p><span>Home ></span> ABOUT</p>
+                    <p><span>Home ></span> About</p>
                 </div>
             </div>
         </div>
@@ -18,22 +18,71 @@
             <p class="text-center mb-5">We are dedicated to providing a comfortable and efficient stay for every guest.</p>
         </div>
 
-        <div class="row vision-mission-container mb-5">
-            <div class="col-md-6 mb-4">
-                <div class="vision-box p-4">
-                    <h3><i class="fas fa-eye me-2"></i> Our Vision</h3>
-                    <hr>
-                    <p>To revolutionize the hospitality industry by creating seamless hotel management solutions that empower hoteliers to deliver exceptional guest experiences while maximizing operational efficiency and profitability.</p>
-                </div>
-            </div>
-            <div class="col-md-6 mb-4">
-                <div class="mission-box p-4">
-                    <h3><i class="fas fa-bullseye me-2"></i> Our Mission</h3>
-                    <hr>
-                    <p>We are committed to providing innovative, user-friendly hotel management systems that streamline operations, enhance guest satisfaction, and drive revenue growth through cutting-edge technology and personalized support.</p>
-                </div>
-            </div>
-        </div>
+<div class="container my-5 text-center">
+  <!-- Logo -->
+  <div class="mb-4">
+    <img src="../assets/media/about/logo.jpg" alt="Secret Berry Resort Logo" class="img-fluid" style="max-height: 400px; max-width: 400px;">
+  </div>
+
+  <!-- Introduction -->
+  <div class="mb-5 p-4 bg-light rounded shadow-sm" style="text-align: center;">
+    <p>
+      <strong>Secret Berry Resort</strong> is a luxury boutique hotel in Nuwara Eliya, catering to local and international tourists. We offer premium hospitality services including fine dining, guided tours, and wellness experiences — ensuring an unforgettable stay.
+    </p>
+    <p>
+      Secret Berry Resort is a peaceful hideaway in the cool hills of Nuwara Eliya, Sri Lanka. Designed for those who seek comfort, nature, and luxury, our resort blends modern elegance with breathtaking natural surroundings.
+    </p>
+  </div>
+
+  <!-- Confidentiality Statement -->
+  <div class="mb-5 p-4 bg-white rounded shadow-sm border" style="text-align: center;">
+    <h4 class="mb-3 text-danger"><i class="bi bi-shield-lock"></i> Confidentiality Statement</h4>
+    <p>
+      We offer a special welcome drink to all guests, crafted from a unique recipe that should not be disclosed to any third party. Only visitors who experience our resort can truly enjoy this one-of-a-kind flavor.
+    </p>
+  </div>
+
+  <!-- Our Rooms -->
+  <div class="mb-5 p-4 bg-light rounded shadow-sm" style="text-align: center;">
+    <h4 class="mb-3 text-warning"><i class="bi bi-house-heart"></i> Our Rooms</h4>
+    <p>
+      From cozy Deluxe Rooms to the exquisite Luxury Suite, every room is designed to provide comfort, privacy, and a direct connection to nature. All rooms include high-speed Wi-Fi, room service, premium toiletries, and beautiful views.
+    </p>
+  </div>
+
+  <!-- Location -->
+  <div class="mb-5 p-4 bg-white rounded shadow-sm border" style="text-align: center;">
+    <h4 class="mb-3 text-info"><i class="bi bi-geo-alt-fill"></i> Location</h4>
+    <p>
+      We are just minutes away from Gregory Lake, Victoria Park, and the city's vibrant market — yet hidden enough to offer complete peace and quiet.
+    </p>
+  </div>
+</div>
+
+<!-- Vision and Mission -->
+<div class="container text-center">
+  <div class="row vision-mission-container mb-5 justify-content-center">
+    <div class="col-md-6 mb-4">
+      <div class="vision-box p-4 bg-light rounded shadow-sm" style="text-align: justify;">
+        <h3><i class="fas fa-eye me-2"></i> Our Vision</h3>
+        <hr>
+        <p>
+          To revolutionize the hospitality industry by creating seamless hotel management solutions that empower hoteliers to deliver exceptional guest experiences while maximizing operational efficiency and profitability.
+        </p>
+      </div>
+    </div>
+    <div class="col-md-6 mb-4">
+      <div class="mission-box p-4 bg-white rounded shadow-sm border" style="text-align: justify;">
+        <h3><i class="fas fa-bullseye me-2"></i> Our Mission</h3>
+        <hr>
+        <p>
+          We are committed to providing innovative, user-friendly hotel management systems that streamline operations, enhance guest satisfaction, and drive revenue growth through cutting-edge technology and personalized support.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
         <!-- Team Section with Modified Layout -->
         <div class="team-section">
             <h2 class="text-center mb-5">Meet Our Leadership Team</h2>
