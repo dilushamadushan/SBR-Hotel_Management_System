@@ -212,13 +212,13 @@ if ($conn->query($tableSql) === TRUE) {
                 
                 try {
                     // Server settings
-                    $mail->isSMTP();
-                    $mail->Host       = 'smtp.gmail.com';
-                    $mail->SMTPAuth   = true;
-                    $mail->Username   = 'sivmalishan@gmail.com';
-                    $mail->Password   = 'ovdefveiczfsawtc';
-                    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-                    $mail->Port       = 587;
+                    // $mail->isSMTP();
+                    // $mail->Host       = '';
+                    // $mail->SMTPAuth   = true;
+                    // $mail->Username   = '';
+                    // $mail->Password   = '';
+                    // $mail->SMTPSecure = ;
+                    // $mail->Port       = ;
                     
                     // Format date and time for better readability
                     $formatted_date = date('l, F j, Y', strtotime($event_date));
