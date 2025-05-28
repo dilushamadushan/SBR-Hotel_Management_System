@@ -1,5 +1,5 @@
 <?php
-
+require_once '../includes/conn.php'; 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 ?>
@@ -134,13 +134,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_event'])) {
                     $mail = new PHPMailer(true);
                     
                     // Server settings
-                    // $mail->isSMTP();
-                    // $mail->Host       = '';
-                    // $mail->SMTPAuth   = ;
-                    // $mail->Username   = '';
-                    // $mail->Password   = '';
-                    // $mail->SMTPSecure = ;
-                    // $mail->Port       =;
+                    $mail->isSMTP();
+                    $mail->Host       = $_ENV['MAILE_HOST'];
+                    $mail->SMTPAuth   = $_ENV['MAILE_SMTPAUTH'];
+                    $mail->Username   = $_ENV['MAILE_UERNAME'];
+                    $mail->Password   = $_ENV['MAILE_PASSWORD'];
+                    $mail->SMTPSecure = $_ENV['MAILE_SMTPSECURE'];
+                    $mail->Port       = $_ENV['MAILE_PORT'];
                     
                     // Format date for better readability
                     $formatted_date = date('l, F j, Y', strtotime($event_data['event_date']));
