@@ -10,6 +10,7 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 include "../includes/config.php";
+require_once '../includes/conn.php'; 
 
 
 // Check if the table is empty
@@ -212,13 +213,13 @@ if ($conn->query($tableSql) === TRUE) {
                 
                 try {
                     // Server settings
-                    // $mail->isSMTP();
-                    // $mail->Host       = '';
-                    // $mail->SMTPAuth   = true;
-                    // $mail->Username   = '';
-                    // $mail->Password   = '';
-                    // $mail->SMTPSecure = ;
-                    // $mail->Port       = ;
+                    $mail->isSMTP();
+                    $mail->Host       = $_ENV['MAILE_HOST'];
+                    $mail->SMTPAuth   = $_ENV['MAILE_SMTPAUTH'];
+                    $mail->Username   = $_ENV['MAILE_UERNAME'] ;
+                    $mail->Password   = $_ENV['MAILE_PASSWORD'];
+                    $mail->SMTPSecure = $_ENV['MAILE_SMTPSECURE'];
+                    $mail->Port       = $_ENV['MAILE_PORT'];
                     
                     // Format date and time for better readability
                     $formatted_date = date('l, F j, Y', strtotime($event_date));
